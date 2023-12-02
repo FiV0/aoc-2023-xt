@@ -1,13 +1,17 @@
 {:paths ["src" "resources"]
 
  :deps
- {org.clojure/clojure {:mvn/version "1.11.1"}}
+ {org.clojure/clojure {:mvn/version "1.11.1"}
+  com.xtdb.labs/xtdb-api {:mvn/version "dev-SNAPSHOT"}
+  com.xtdb.labs/xtdb-core {:mvn/version "dev-SNAPSHOT"}}
+
 
  :aliases
  {:dev
   {:extra-paths ["dev"]
    :extra-deps  {org.clojure/tools.namespace {:mvn/version "1.1.0"}
-                 com.lambdaisland/classpath  {:mvn/version "0.0.27"}}}
+                 com.lambdaisland/classpath  {:mvn/version "0.0.27"}}
+   :jvm-opts ["--add-opens=java.base/java.nio=ALL-UNNAMED"]}
 
   :test
   {:extra-paths ["test"]
